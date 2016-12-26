@@ -1,0 +1,9 @@
+{% extends "bookmarks_application/bookmark_list.html" %}
+
+{% block title %}Bookmarks de {{ owner.username }}{% endblock %}
+
+{% block heading %}
+  <h2>Bookmarks de {{ owner.username }}<br>
+    <small>{{ bookmarks.count }} bookmarks no total</small>
+  </h2>
+{% endblock %}
