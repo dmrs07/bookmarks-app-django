@@ -1,0 +1,20 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$ZAfTebMhrFwX$MjezHrH0QU2tpUU3kv9NSKmjkAliiXZT4I4Uuld+W3s=",
+        "last_login": "2016-12-27T00:43:05.702Z",
+        "is_superuser": true,
+        "username": "dmrs07",
+        "first_name": "",
+        "last_name": "",
+        "email": "dmrs07@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2016-12-27T00:42:46.106Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
