@@ -19,3 +19,8 @@
   <br><a class="btn btn-default btn-xs" role="button"
       href="{% url "bookmark_edit" bookmark.pk %}">Editar bookmark</a>
 {% endif %}
+{% if bookmark.owner == user or user.is_superuser %}
+  <br><a onclick="return confirm('Tem certeza?')"
+         class="btn btn-default btn-xs" role="button"
+      href="{% url "bookmark_delete" bookmark.pk %}">Remover bookmark</a>
+{% endif %}

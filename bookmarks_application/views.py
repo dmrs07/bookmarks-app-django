@@ -53,3 +53,18 @@ def bookmark_edit(request, pk):
         form = BookmarkForm(instance=bookmark)
     context = {'form': form, 'create': False}
     return render(request, 'bookmarks_application/form.html', context)
+
+
+@login_required
+def bookmark_delete(request, pk):
+    bookmark = get_object_or_404(Bookmark, pk=pk)
+    if bookmark.owner != request.user and not request.user.is_superuser:
+        raise PermissionDenied
+    if request.method == 'GET':
+        bookmark.delete()
+        return redirect('bookmark_user',
+                username=request.user.username)
+    else:
+        bookmarks = Bookmark.public.filter(owner__username=request.user.username)
+        context = {'bookmark': bookmark, 'owner': request.user}
+    return render(request, 'bookmarks_application/bookmark_user.html', context)
