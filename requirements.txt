@@ -5,5 +5,4 @@ djangorestframework==3.5.3
 gunicorn==19.6.0
 pytz==2016.10
 requests==2.12.4
-unity-lens-photos==1.0
 whitenoise==3.2.2
