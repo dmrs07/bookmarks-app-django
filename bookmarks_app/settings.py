@@ -130,3 +130,10 @@ LOGOUT_URL = 'app_logout'
 LOGIN_REDIRECT_URL = 'bookmark_list'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
